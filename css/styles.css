@@ -104,10 +104,11 @@ footer {
   z-index: 10;
 }
 
+/* 全体レイアウト */
 .container {
   width: 92%;
   max-width: 1000px;
-  margin: 40px;
+  margin: 40px auto;
   position: relative;
   z-index: 1;
 }
@@ -179,35 +180,6 @@ footer {
   border: 3px solid #111;
 }
 
-/* ===== カード表示（home, about, food） ===== */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  margin-top: 60px;
-}
-
-.card {
-  background-color: #f9f9f9;
-  padding: 25px;
-  border-left: 5px solid #111;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card a {
-  display: inline-block;
-  margin-top: 15px;
-  color: #111;
-  text-decoration: none;
-  font-weight: bold;
-}
-
 /* ===== 映画紹介ページ（左右交互・movie.html） ===== */
 .movie-list {
 
@@ -261,25 +233,82 @@ footer {
   color: #333;
 }
 
-.platform {
-  width: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 12px;
-  gap: 10px;
+.movie-info:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
 }
 
-.platform-logo {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(79,70,229,0.12);
-  background-color: transparent;
-  margin-right: 0;
+/* ===== フード（food.html） ===== */
+.food-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-top: 60px;
+}
+
+.food-info-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.food-photo {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(79,70,229,0.12);
+}
+
+.food-info {
+  width: 50%;
+  border-width: medium;
+  border-style: solid;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.08);
+  padding: 18px;
+}
+
+.food-info h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  text-align:center;
+  background-color: black;
+  color: #fff;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 1rem;
+  padding: 8px 0;
+  letter-spacing: 1px;
+}
+
+.food-info p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+  color: #333;
+}
+
+.food-info:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+
 }
 
 /* ===== フォーム（contact.html） ===== */
+/* Contactカード */
+.contact-card {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-left: 5px solid #111;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+/* フォーム */
 form {
   margin-top: 20px;
 }
@@ -294,8 +323,71 @@ form textarea {
   border-radius: 8px;
 }
 
-form button {
+form button,
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover,
+.button:hover {
+  background-color: #4f46e5;
+  transform: translateY(-3px);
+}
+
+/* ===== 機能セクション ===== */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(79,70,229,0.08);
+  padding: 24px;
+  flex: 1;
+  min-width: 220px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.feature:hover {
+  box-shadow: 0 8px 24px rgba(79,70,229,0.15);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #e0e7ff;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.12);
+}
+
+.feature-link {
+  display: inline-block;
   margin-top: 10px;
+  color: #4f46e5;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.feature-link:hover {
+  color: #111;
 }
 
 /* ===== レスポンシブ対応 ===== */
