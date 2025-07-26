@@ -168,8 +168,9 @@ footer {
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   margin-bottom: 30px;
+  font-weight: 800;
 }
 
 .hero-image {
@@ -366,6 +367,8 @@ form button:hover,
 .feature:hover {
   box-shadow: 0 8px 24px rgba(79,70,229,0.15);
   transform: translateY(-6px) scale(1.03);
+  transition: all 0.3s ease;
+  background-color: #e0e7ff;
 }
 
 .feature-icon {
@@ -380,42 +383,139 @@ form button:hover,
 .feature-link {
   display: inline-block;
   margin-top: 10px;
-  color: #4f46e5;
+  color: black;
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s;
+}
+
+.feature-link h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #111;
+  font-weight: 700; 
+}
+
+
+.feature-link span {
+  color: #4f46e5;
+  font-weight: bold;
 }
 
 .feature-link:hover {
   color: #111;
 }
 
+.about-feature {
+  transition: none !important;
+}
+
+.about-feature:hover {
+  box-shadow: none !important;
+  transform: none !important;
+  background: #f9f9f9 !important;
+  color: inherit !important;
+}
+
+.about-feature h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  color: #111;
+  font-weight: 700; 
+}
+
+/* ===== food-listとmovie-listの偶数行だけ左右反転 ===== */
+.food-info-row:nth-child(even),
+.movie-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
 /* ===== レスポンシブ対応 ===== */
-@media (max-width: 768px) {
-  .movie-row,
-  .movie-row.reverse {
-    flex-direction: column;
-    text-align: center;
+@media (max-width: 900px) {
+  .container {
+    width: 98%;
+    margin: 20px auto;
+    padding: 0 8px;
   }
 
-  .movie-info,
+  .feature-list {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .feature {
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    padding: 16px;
+  }
+
+  .food-list,
+  .movie-list {
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .food-info-row,
+  .movie-row {
+    flex-direction: column !important; /* 横並び→縦並び */
+    gap: 18px;
+    align-items: center;
+  }
+
+  .food-photo,
   .movie-row img {
     width: 100%;
+    max-width: 340px;
+    height: auto;
+    margin: 0 auto;
   }
 
-  .movie-row img {
-    max-height: 300px;
+  .food-info,
+  .movie-info {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .hero-image {
+    width: 120px;
+    height: 120px;
   }
 
   nav ul {
     flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
+    gap: 12px;
+    margin-top: 8px;
   }
+  nav a {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+}
 
-  .hero-image {
-    width: 140px;
-    height: 140px;
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .feature-link h3,
+  .movie-info h3,
+  .food-info h3 {
+    font-size: 1.1rem;
+  }
+  footer {
+    padding: 12px;
+    font-size: 0.8rem;
+  }
+  nav a {
+    font-size: 0.95rem;
+    padding: 5px 8px;
   }
 }
 
