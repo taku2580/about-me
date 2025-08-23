@@ -239,22 +239,22 @@ footer {
   transition: 0.3s ease;
 }
 
-/* ===== フード（food.html） ===== */
-.food-list {
+/* ===== フード（travel.html） ===== */
+.travel-list {
   display: flex;
   flex-direction: column;
   gap: 60px;
   margin-top: 60px;
 }
 
-.food-info-row {
+.travel-info-row {
   display: flex;
   align-items: center;
   gap: 32px;
   margin-bottom: 32px;
 }
 
-.food-photo {
+.travel-photo {
   width: 500px;
   height: 300px;
   object-fit: cover;
@@ -262,7 +262,7 @@ footer {
   box-shadow: 0 4px 16px rgba(79,70,229,0.12);
 }
 
-.food-info {
+.travel-info {
   width: 50%;
   border-width: medium;
   border-style: solid;
@@ -272,7 +272,7 @@ footer {
   padding: 18px;
 }
 
-.food-info h3 {
+.travel-info h3 {
   font-size: 1.6rem;
   margin-bottom: 15px;
   text-align:center;
@@ -285,17 +285,26 @@ footer {
   letter-spacing: 1px;
 }
 
-.food-info p {
+.travel-info p {
   font-size: 1.1rem;
   line-height: 1.8;
-  text-align: center;
+  text-align: left;
   color: #333;
 }
 
-.food-info:hover {
+.travel-info:hover {
   transform: translateY(-5px);
   transition: 0.3s ease;
 
+}
+
+.flag-icon {
+  width: 48px;
+  height: 32px;
+  margin-right: 10px;
+  vertical-align: middle;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 /* ===== フォーム（contact.html） ===== */
@@ -424,8 +433,8 @@ form button:hover,
   font-weight: 700; 
 }
 
-/* ===== food-listとmovie-listの偶数行だけ左右反転 ===== */
-.food-info-row:nth-child(even),
+/* ===== travel-listとmovie-listの偶数行だけ左右反転 ===== */
+.travel-info-row:nth-child(even),
 .movie-row:nth-child(even) {
   flex-direction: row-reverse;
 }
@@ -450,20 +459,20 @@ form button:hover,
     padding: 16px;
   }
 
-  .food-list,
+  .travel-list,
   .movie-list {
     gap: 32px;
     margin-top: 32px;
   }
 
-  .food-info-row,
+  .travel-info-row,
   .movie-row {
     flex-direction: column !important; /* 横並び→縦並び */
     gap: 18px;
     align-items: center;
   }
 
-  .food-photo,
+  .travel-photo,
   .movie-row img {
     width: 100%;
     max-width: 340px;
@@ -471,7 +480,7 @@ form button:hover,
     margin: 0 auto;
   }
 
-  .food-info,
+  .travel-info,
   .movie-info {
     width: 100%;
     padding: 12px;
@@ -506,7 +515,7 @@ form button:hover,
   }
   .feature-link h3,
   .movie-info h3,
-  .food-info h3 {
+  .travel-info h3 {
     font-size: 1.1rem;
   }
   footer {
@@ -518,6 +527,8 @@ form button:hover,
     padding: 5px 8px;
   }
 }
+
+
 
 
 
