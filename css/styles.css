@@ -156,7 +156,7 @@ footer {
   color: #666;
 }
 
-/* ===== Heroセクション（home） ===== */
+/* ===== Homeセクション（home） ===== */
 .hero {
   text-align: center;
   margin-top: 60px;
@@ -239,7 +239,7 @@ footer {
   transition: 0.3s ease;
 }
 
-/* ===== フード（travel.html） ===== */
+/* ===== travel（travel.html） ===== */
 .travel-list {
   display: flex;
   flex-direction: column;
@@ -352,94 +352,99 @@ form button:hover,
   transform: translateY(-3px);
 }
 
-/* ===== 機能セクション ===== */
+/* ===== about  ===== */
 .feature-list {
   display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin-top: 48px;
-}
-
-.feature {
-  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
   align-items: flex-start;
-  gap: 18px;
-  background: #f9f9f9;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 32px 16px;
+  background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(79,70,229,0.08);
-  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.feature-group {
   flex: 1;
-  min-width: 220px;
-  transition: box-shadow 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.feature:hover {
-  box-shadow: 0 8px 24px rgba(79,70,229,0.15);
-  transform: translateY(-6px) scale(1.03);
-  transition: all 0.3s ease;
-  background-color: #e0e7ff;
+.feature.about-feature {
+  max-width: 500px;
+
+  margin: left;
+  padding: 12px 16px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
-.feature-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  background: #e0e7ff;
-  box-shadow: 0 2px 8px rgba(79,70,229,0.12);
+.feature.about-feature h3 {
+  font-size: 1.25rem;
+  margin-bottom: 90px;
+  color: #111;
+  font-weight: 700;
 }
 
-.feature-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.feature-link h3 {
+.feature.about-feature p {
   font-size: 1.5rem;
-  margin-bottom: 8px;
-  color: #111;
-  font-weight: 700; 
+  color: #333;
+  font-weight: 500;
+  margin: 40px 100px 0px 0px;
 }
 
-
-.feature-link span {
-  color: #4f46e5;
-  font-weight: bold;
+.about-images {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: none;
 }
 
-.feature-link:hover {
-  color: #111;
+.about-images img {
+  width: 320px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  background: #fff;
+  display: block;
+  margin: 0 auto;
 }
 
-.about-feature {
-  transition: none !important;
+/* ===== 映画紹介ページ・旅行ページ 画像交互配置 ===== */
+.movie-row,
+.travel-info-row {
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
-.about-feature:hover {
-  box-shadow: none !important;
-  transform: none !important;
-  background: #f9f9f9 !important;
-  color: inherit !important;
-}
-
-.about-feature h3 {
-  font-size: 1.2rem;
-  margin-bottom: 4px;
-  color: #111;
-  font-weight: 700; 
-}
-
-/* ===== travel-listとmovie-listの偶数行だけ左右反転 ===== */
-.travel-info-row:nth-child(even),
-.movie-row:nth-child(even) {
+/* 偶数番目の行は画像を右側に */
+.movie-row:nth-child(even),
+.travel-info-row:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-/* ===== レスポンシブ対応 ===== */
+/* 画像サイズや共通装飾は既存のままでOK */
+.movie-row img,
+.travel-photo {
+  width: 40%;
+  min-width: 200px;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(79,70,229,0.10);
+}
+
+/* レスポンシブ対応 */
 @media (max-width: 900px) {
   .container {
     width: 98%;
@@ -449,7 +454,9 @@ form button:hover,
 
   .feature-list {
     flex-direction: column;
-    gap: 24px;
+    align-items: center;
+    gap: 32px;
+    padding: 20px 4vw;
   }
 
   .feature {
@@ -501,9 +508,7 @@ form button:hover,
     font-size: 1rem;
     padding: 6px 10px;
   }
-}
 
-@media (max-width: 600px) {
   header h1 {
     font-size: 1.3rem;
   }
@@ -518,6 +523,15 @@ form button:hover,
   .travel-info h3 {
     font-size: 1.1rem;
   }
+  /* === aboutページ用 文字サイズ調整 === */
+  .feature.about-feature h3 {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  .feature.about-feature p {
+    font-size: 1rem;
+    margin: 0 auto;
+  }
   footer {
     padding: 12px;
     font-size: 0.8rem;
@@ -527,6 +541,7 @@ form button:hover,
     padding: 5px 8px;
   }
 }
+
 
 
 
