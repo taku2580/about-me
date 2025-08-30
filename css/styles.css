@@ -217,7 +217,7 @@ footer {
 .movie-info h3 {
   font-size: 1.6rem;
   margin-bottom: 15px;
-  text-align:center;
+  text-align: center;
   background-color: black;
   color: #fff;
   border-width: thin;
@@ -230,7 +230,7 @@ footer {
 .movie-info p {
   font-size: 1.1rem;
   line-height: 1.8;
-  text-align: center;
+  text-align: left;
   color: #333;
 }
 
