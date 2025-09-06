@@ -318,6 +318,25 @@ footer {
   margin-top: 40px;
 }
 
+/* お問い合わせタイトル＋アイコン横並び用 */
+.contact-card-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.contact-card-title h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.contact-card-title img {
+  width: 60px;
+  height: 48px;
+}
+
 /* フォーム */
 form {
   margin-top: 20px;
@@ -444,6 +463,121 @@ form button:hover,
   box-shadow: 0 5px 15px rgba(79,70,229,0.10);
 }
 
+/* ===== スライダー（新規追加） ===== */
+.slider {
+  width: 100%;
+  max-width: 500px;
+  margin: 32px auto;
+  position: relative;
+}
+
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
+.slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 2rem;
+  padding: 0 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.slider-btn.prev { left: 12px; }
+.slider-btn.next { right: 12px; }
+
+/* ===== Homeセクション（home）新規追加 ===== */
+.home-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.home {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(79,70,229,0.08);
+  padding: 24px;
+  flex: 1;
+  min-width: 220px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.home:hover {
+  box-shadow: 0 8px 24px rgba(79,70,229,0.15);
+  transform: translateY(-6px) scale(1.03);
+  transition: all 0.3s ease;
+  background-color: #e0e7ff;
+}
+
+.home-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #e0e7ff;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.12);
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.home-link h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #111;
+  font-weight: 700; 
+}
+
+
+.home-link span {
+  color: #4f46e5;
+  font-weight: bold;
+}
+
+.home-link:hover {
+  color: #4f46e5;
+}
+
+
+
+
 /* レスポンシブ対応 */
 @media (max-width: 900px) {
   .container {
@@ -518,7 +652,7 @@ form button:hover,
   .hero p {
     font-size: 1rem;
   }
-  .feature-link h3,
+  .home-link h3,
   .movie-info h3,
   .travel-info h3 {
     font-size: 1.1rem;
@@ -539,6 +673,26 @@ form button:hover,
   nav a {
     font-size: 0.95rem;
     padding: 5px 8px;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-list {
+    max-width: 98vw;
+    gap: 20px;
+  }
+  .home-link {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 10px;
+  }
+  .home-link h3,
+  .home-link p,
+  .home-link span {
+    margin-left: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 8px 10px;
   }
 }
 
